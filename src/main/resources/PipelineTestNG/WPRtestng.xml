@@ -1,0 +1,108 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-PerformanceRating-Module">
+
+<parameter name="moduleName" value="Common"/>
+
+   <test name="WELL-Main-WPR" >
+<parameter name="SheetName" value="Wpr"/>
+<parameter name="rowNum" value="2"/>
+<parameter name="Country" value="US"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="API" value="false"/>
+<parameter name="Upload" value="false"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation WPR Main"/>
+<classes>
+  <class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+    <class name="com.Well.testcases.Performance.Performance_TC_02_RegisterPerformanceTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_03_SubscribeAndStoreIdTest"></class>   
+  <class name="com.Well.testcases.Performance.Performance_TC_04_SearchPerformanceByIdTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_04A_SearchPerformanceByStatusTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_19_DashboardTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_05_WprProjectFieldValidationTest"></class>
+   <class name="com.Well.testcases.Performance.Performance_TC_06_LocationTest"></class>   
+   <class name="com.Well.testcases.Performance.Performance_TC_07_ScorecardTest"></class>
+    <class name="com.Well.testcases.Performance.Performance_TC_07A_PromotionTest"></class>
+    <class name="com.Well.testcases.Performance.Performance_TC_08_DocumentTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_09_ReviewTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_10_AlternativesTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_12_EditTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_13_PromotionTest"></class>  
+  <class name="com.Well.testcases.Performance.Performance_TC_14_ProfileTest"></class>
+   <class name="com.Well.testcases.Performance.Performance_TC_15_AddLocationTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_16_DownloadBillingAndValidateTest"></class>  
+  <class name="com.Well.testcases.Performance.Performance_TC_20_SupportTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_11_TeamTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_11A_ValidateProjectAccessTeamTest"></class>
+   <class name="com.Well.testcases.Performance.Performance_TC_21_CloseProjectTest"></class>      
+  <class name="com.Well.testcases.Performance.Performance_TC_17_ErrorNegativeAssertTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_17_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>  
+
+  <test name="WELL-WPR-Renewal-MulipleYesLocation" >
+<parameter name="SheetName" value="Wpr"/>
+<parameter name="rowNum" value="3"/>
+<parameter name="Country" value="US"/>
+<parameter name="ProjectType" value="wpr"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Renewal" value="yes"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation WPR-Renewal-MulipleYesLocation"/>
+<classes>
+ <class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_02_RegisterPerformanceTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_03_SubscribeAndStoreIdTest"></class>   
+  <class name="com.Well.testcases.Performance.Performance_TC_04_SearchPerformanceByIdTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_04A_SearchPerformanceByStatusTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_19_DashboardTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_05_WprProjectFieldValidationTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_06_LocationTest"></class> 
+   <class name="com.Well.testcases.Performance.Performance_TC_07_ScorecardTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_07A_PromotionTest"></class>
+   <class name="com.Well.testcases.Performance.Performance_TC_08_DocumentTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_09_ReviewTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_22_RenewalEnhanceTest"></class>   
+   <class name="com.Well.testcases.Performance.Performance_TC_17_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>   
+
+ <test name="WELL-WPR-Renewal-MulipleNoLocation" >
+<parameter name="SheetName" value="Wpr"/>
+<parameter name="rowNum" value="4"/>
+<parameter name="Country" value="US"/>
+<parameter name="ProjectType" value="wpr"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Renewal" value="no"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation WPR-Renewal-Muliple/NoLocation"/>
+<classes>
+ <class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_02_RegisterPerformanceTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_03_SubscribeAndStoreIdTest"></class>   
+  <class name="com.Well.testcases.Performance.Performance_TC_04_SearchPerformanceByIdTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_04A_SearchPerformanceByStatusTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_19_DashboardTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_05_WprProjectFieldValidationTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_06_LocationTest"></class> 
+   <class name="com.Well.testcases.Performance.Performance_TC_07_ScorecardTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_07A_PromotionTest"></class>
+   <class name="com.Well.testcases.Performance.Performance_TC_08_DocumentTest"></class>
+  <class name="com.Well.testcases.Performance.Performance_TC_09_ReviewTest"></class> 
+  <class name="com.Well.testcases.Performance.Performance_TC_22_RenewalEnhanceTest"></class>   
+   <class name="com.Well.testcases.Performance.Performance_TC_17_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>    
+</suite>  

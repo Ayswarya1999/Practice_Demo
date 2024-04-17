@@ -1,0 +1,79 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-EquityRating-Module">
+
+
+<parameter name="moduleName" value="Common"/>
+
+  <test name="WELL-Main-WER" >
+<parameter name="SheetName" value="Wer"/>
+<parameter name="rowNum" value="2"/>
+<parameter name="Country" value="US"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="ProjectType" value="wer"/>
+<parameter name="API" value="false"/>
+<parameter name="Upload" value="false"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation WER Main"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+   <class name="com.Well.testcases.Equity.Equity_TC_02_RegisterAndValidateTest"></class>
+ <class name="com.Well.testcases.Equity.Equity_TC_03_SubscribeAndStoreIdTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_04_SearchByIdTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_04A_SearchByRegisteredStatusTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_18_DashboardTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_05_DownloadBillingAndValidateTest"></class>
+  <class name="com.Well.testcases.Equity.Equity_TC_06_WerProjectFieldValidationTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_07_LocationTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_08_ScoreCardTest"></class>  
+<class name="com.Well.testcases.Equity.Equity_TC_09_DocumentTest"></class>
+ <class name="com.Well.testcases.Equity.Equity_TC_10_ReviewTest"></class> 
+ <class name="com.Well.testcases.Equity.Equity_TC_11_AlternativesTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_12_EditTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_13_PromotionTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_14_ProfileTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_19_ValidLocationCountTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_15_AddMemberTeamTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_15A_ValidateProjectAccessTeamTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_17_SearchByAchievedStatusTest"></class>    
+<class name="com.Well.testcases.Equity.Equity_TC_16_ErrorNegativeAssertTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_16_01_FieldNegativeAssertTest"></class> 
+</classes>
+</test>            
+  
+
+  <test name="WELL-WER-Audit-170Locations">
+<parameter name="SheetName" value="Wer"/>
+<parameter name="rowNum" value="3"/>
+<parameter name="Country" value="US"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="ProjectType" value="wer"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation Wer-170Locations "/>
+<classes>
+   <class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+  <class name="com.Well.testcases.Equity.Equity_TC_02_RegisterAndValidateTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_03_SubscribeAndStoreIdTest"></class>  
+<class name="com.Well.testcases.Equity.Equity_TC_04_SearchByIdTest"></class>
+ <class name="com.Well.testcases.Equity.Equity_TC_04A_SearchByRegisteredStatusTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_18_DashboardTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_05_DownloadBillingAndValidateTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_06_WerProjectFieldValidationTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_07A_LocationTest"></class>  
+<class name="com.Well.testcases.Equity.Equity_TC_08A_ScoreCardTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_19A_ValidLocationCountTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_15B_AddingTeamMemberTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_10A_DocumentTest"></class>   
+<class name="com.Well.testcases.Equity.Equity_TC_21B_ValidateTeamPTAccessTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_08B_ScoreCardFiterValidationTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_20_CloseProjectTest"></class>
+<class name="com.Well.testcases.Equity.Equity_TC_16_ErrorNegativeAssertTest"></class> 
+<class name="com.Well.testcases.Equity.Equity_TC_16_01_FieldNegativeAssertTest"></class> 
+</classes>
+</test>          
+</suite>  

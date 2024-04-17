@@ -1,0 +1,115 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-HealthSafetyRating-Module">
+
+<parameter name="moduleName" value="Common"/>
+
+ <test name="WELL-HSR" >
+<parameter name="SheetName" value="Hsr"/>
+<parameter name="rowNum" value="2"/>
+<parameter name="Country" value="US"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="API" value="false"/>
+<parameter name="Upload" value="false"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation Hsr Main"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+    <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_02_RegisterHealthSafetyTest"></class> 
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_03_SubscribeAndStoreIdTest"></class>   
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_04_SearchHealthSafetyByIdTest"></class>
+  <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_04A_SearchFilterByStatusTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_19_DashboardTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_05_HsrProjectFieldValidationTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_06_LocationTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_07_ScorecardTest"></class>   
+  <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_08_DocumentTest"></class> 
+  <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_09_ReviewTest"></class> 
+   <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_10_AlternativesTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_12_EditTest"></class>
+   <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_12A_AchievementsTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_13_PromotionTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_14_ProfileTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_15_AddLocationTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_16_DownloadBillingReceiptAndValidateTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_11_AddTeamMemberTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_11A_ValidateProjectAccessTeamTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_18_SearchFilterByStatusTest"></class>
+<class name="com.Well.testcases.HealthSafety.HealthSafety_TC_19_CloseProjectTest"></class> 
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_17_ErrorNegativeAssertTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_17_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>    
+
+
+<test name="WELL-HSR-SearchFilter" >
+<parameter name="SheetName" value="Hsr"/>
+<parameter name="rowNum" value="3"/>
+<parameter name="Country" value="CN"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation Hsr Enrollment Filter"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_00_RegisterTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_01_SearchReadyToEnrollStatusTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_02_EnrollTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_03_SearchV2ProjectByPaymentPendingStatusTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_04_BillingTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_05_SearchV2ProjectByRegisteredStatusTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_SF_06_ValidatePursueInScorecardTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_17_ErrorNegativeAssertTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_17_01_FieldNegativeAssertTest"></class>
+</classes>
+</test> 
+ 
+
+ 
+ <test name="WELL-HSR-NonEnhanced" >
+<parameter name="SheetName" value="Hsr"/>
+<parameter name="rowNum" value="4"/>
+<parameter name="Country" value="US"/>
+<parameter name="ProjectType" value="v2-hsr"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="SheetName" value="Hsr"/>
+<parameter name="Commodity" value="Ratings"/>
+<parameter name="DataValidate" value="false"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="Renewal" value="yes"/>
+<parameter name="ProjectName" value="Automation Hsr-NonEnhanced"/>
+<classes>
+  <class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_02_RegisterHealthSafetyTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_03_SubscribeAndStoreIdTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_04_SearchHealthSafetyByIdTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_04A_SearchFilterByStatusTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_19_DashboardTest"></class> 
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_05_HsrProjectFieldValidationTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_06_LocationTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_07_ScorecardTest"></class>  
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_08_DocumentTest"></class>   
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_09_ReviewTest"></class> 
+   <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_10_AlternativesTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_12_EditTest"></class>
+  <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_12A_AchievementsTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_13_PromotionTest"></class>
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_14_ProfileTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_15_AddLocationTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_16_DownloadBillingReceiptAndValidateTest"></class> 
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_11_AddTeamMemberTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_11A_ValidateProjectAccessTeamTest"></class>    
+ <class name="com.Well.testcases.HealthSafety.Healthsafety_TC_20_RenewalEnhanceTest"></class> 
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_17_ErrorNegativeAssertTest"></class>
+<class name="com.Well.testcases.HealthSafety.Healthsafety_TC_17_01_FieldNegativeAssertTest"></class>
+</classes>
+</test> 
+
+</suite>  
+

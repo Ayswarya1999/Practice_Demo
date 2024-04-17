@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-Community-Module">
+
+<parameter name="moduleName" value="Common"/>
+<test name="WELL-Community" >
+<parameter name="SheetName" value="Community"/>
+<parameter name="rowNum" value="2"/>
+<parameter name="Country" value="US"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+ <class name="com.Well.testcases.Community.Community_TC_02_RegisterTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_03_SearchListByIdTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_04_BillingTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_05_EditTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_06_ProfileTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_07_AddTeamMemberTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_08_AlternativesTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_09_ErrorNegativeAssertTest"></class>
+<class name="com.Well.testcases.Community.Community_TC_10_NegativeFieldAssertTest"></class>
+</classes>
+</test>
+</suite>  

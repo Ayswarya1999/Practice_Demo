@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WELL Frontend Regression">
+<listeners>
+<listener class-name="com.Well.Engine.TestNGEmailableReport2" />
+</listeners>
+<parameter name="SecurtiyTest" value="false"/>
+<parameter name="browserName" value="chrome" />
+<parameter name="environment" value="${env}" />
+<suite-files>
+<suite-file path="UserSeederSync.xml"/> 
+<suite-file path="Facultytestng.xml"/>
+<suite-file path="Examtestng.xml"/>
+<suite-file path="Communitytestng.xml"/>
+<suite-file path="V2Projecttestng.xml"/>
+</suite-files>
+</suite>

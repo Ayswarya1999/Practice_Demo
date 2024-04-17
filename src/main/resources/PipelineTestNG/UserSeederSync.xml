@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-UserSeederSync-Module">
+<parameter name="moduleName" value="Faculty"/>
+
+ <test name="WELL-UserSeederSync" >
+ <parameter name="SheetName" value="Faculty"/>
+<parameter name="rowNum" value="2"/>
+<classes>
+<class name="com.Well.testcases.UserSeederSync.UserSync_TC_01_UserSyncTest"></class>
+</classes> 
+</test>
+</suite>  

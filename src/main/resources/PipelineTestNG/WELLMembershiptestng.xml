@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-WELL-Membership-module">
+
+<parameter name="moduleName" value="WELLMembership"/>
+ <test name="WELL-Membership-WELL" >
+<parameter name="SheetName" value="Membership"/>
+<parameter name="rowNum" value="2"/>
+<parameter name="MembershipName" value="WELL"/>
+<classes>
+<class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteInitialTest"></class>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_02_RegisterMembershipTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_03_EnrollTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_04_BillingTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_05_PromotionTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_06_EducationTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_07_TeamTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_08_ProfileTest"></class>
+ <class name="com.Well.testcases.Membership.Membership_TC_09_ProductLicensingTest"></class> 
+<class name="com.Well.testcases.Membership.Membership_TC_12_FilterTest"></class>
+<class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_10_ErrorNegativeAssertTest"></class>
+<class name="com.Well.testcases.Membership.Membership_TC_11_FieldNegativeAssertTest"></class>
+</classes>
+</test>
+</suite>  

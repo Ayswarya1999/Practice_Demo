@@ -1,0 +1,9 @@
+target/
+logs/
+test-output/*
+output/
+Report/
+Screenshots/
+bin/
+Downloads/
+test-recordings/

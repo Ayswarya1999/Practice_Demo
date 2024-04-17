@@ -1,0 +1,297 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="V2Project-Module">
+<parameter name="browserName" value="chrome"/>
+<parameter name="environment" value="Test"/>
+<parameter name="moduleName" value="V2"/>
+
+   <test name="WELL-V2-Main-CoreProject-SectorDiscount-Single Asset Opt" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="2"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="API" value="false"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation V2 Project-Main-CoreProject-SectorDiscount"/>
+<classes>
+ <class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteInitialTest"></class> 
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+ <class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+ <class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_07_ScorecardV2ProjectTest"></class>  
+<class name="com.Well.testcases.V2Project.V2_TC_08_DocumentV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_09_ReviewV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_10_HealthSafetyV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_11_HealthSafetyReviewV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_12_PerformanceV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_12A_PerformanceReviewV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_13_EquityV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_13A_EquityReviewV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_16_AlternativesV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_17_OverviewAndValidateRegisterFieldsAndPaginationV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_18_PromotionV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_19_ProfileV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_20_EditV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_14_AddTeamMemberV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_14A_ValidateProjectAccessTeamV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_23_ValidateAdminAlternativeV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_29_CoreProjectPreCertificationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_23A_CoreProjectRecertificationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_24_CloseProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_ErrorNegativeAssertTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>    
+
+<test name="WELL-V2-Pilot-CoreProject-Single Asset Opt" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="8"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2-pilot"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2Pilot-CoreProject-SectorDiscount"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_07_ScorecardV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_08_DocumentV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_09_ReviewV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_10_HealthSafetyV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_11_HealthSafetyReviewV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_12_PerformanceV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_12A_PerformanceReviewV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_13_EquityV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_13A_EquityReviewV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_16_AlternativesV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_17_OverviewAndValidateRegisterFieldsAndPaginationV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_18_PromotionV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_19_ProfileV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_20_EditV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_14_AddTeamMemberV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_14A_ValidateProjectAccessTeamV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_23_ValidateAdminAlternativeV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_29_CoreProjectPreCertificationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_23A_CoreProjectRecertificationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_24_CloseProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_ErrorNegativeAssertTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test> 
+ 
+  <test name="WELL-V2-CertificationProject-NoDiscount" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="3"/>
+<parameter name="Type" value="WELLCertification"/>
+<parameter name="Country" value="CN"/>
+<parameter name="Discount" value="NoDiscount"/>
+<parameter name="is_Leed" value="true"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="Upload" value="false"/>
+<parameter name="API" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2-CertificationProject-NoDiscount"/>
+<classes>
+ <class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteInitialTest"></class>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_24_LeedScorecardV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_25_ProjectLeedOptinAndValidationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_26_SubmitDocReviewV2ProjectWithLeedTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_28_V2ProjectNonCoreRecertificationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_22_ErrorNegativeAssertTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>
+
+ <test name="WELL-V2-CoreProject-VerifyScorecardTargetPointSummary" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="5"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="API" value="true"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2-VerifyScorecardTargetPointSummary"/>
+<classes>
+<class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteInitialTest"></class>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_07A_ScorecardTargetPointSummaryV2Project"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>   
+ 
+
+   <test name="WELL-V2-CoreProject-Performance Testing-TeamAccess" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="6"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2Project-TeamAccess"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_14B_AddTeamV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_08A_DocumentV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_08B_ValidateTeamAccessScorecardOrDocumentV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>  
+
+<test name="WELL-V2-CoreProject-Single Asset Hsr Opt Seperate Review cycle" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="7"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2Project-HsrOpt-SeperateReviewcycle"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_07B_ScorecardV2ProjectOptValidTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_11A_HealthSafetyReviewV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_ErrorNegativeAssertTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>    
+
+<test name="WELL-V2-CoreProject-Single Assert-Optn-Rating" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="9"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2Project-HsrOpt-AddMultiplePart"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_02_HealthSafetyV2ProjectOptn_AddMultiplePartTest"></class>  
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>  
+
+<test name="WELL-V2Pilot-CoreProject-Single Assert-Opt-Rating" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="10"/>
+<parameter name="Type" value="WELLCertification"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2-pilot"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2Pilot-Project-HsrOpt-AddMultiplePart"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_02_HealthSafetyV2ProjectOptn_AddMultiplePartTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_23C_V2PilotNonCoreProjectRecertificationTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>     
+
+<test name="WELL-V2-CoreProject-Single Assert-Opt-Rating-Renewal" >
+<parameter name="SheetName" value="V2Project"/>
+<parameter name="rowNum" value="11"/>
+<parameter name="Type" value="WELLCore"/>
+<parameter name="Country" value="US"/>
+<parameter name="Discount" value="SectorDiscount"/>
+<parameter name="is_Leed" value="false"/>
+<parameter name="ProjectType" value="v2"/>
+<parameter name="API" value="true"/>
+<parameter name="Upload" value="false"/>
+<parameter name="Commodity" value="SingleAsset"/>
+<parameter name="ImportLocation" value="No"/>
+<parameter name="ProjectName" value="Automation-V2-Project-HsrOpt-Rating-Renewal"/>
+<classes>
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_02_RegisterV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_03_SearchV2ProjectByIdTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_04_EnrollV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_21_PricingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_05_BillingV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_06_AgreementV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_30_ScorecardPurseV2ProjectTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_14C_VerifyScorecardV2ProjectTest"></class>
+<class name="com.Well.testcases.V2Project.V2_TC_27_HealthSafetyV2ProjectHsrOptn_RenewalTest"></class> 
+<class name="com.Well.testcases.V2Project.V2_TC_22_01_FieldNegativeAssertTest"></class>
+</classes>
+</test>    
+</suite> 

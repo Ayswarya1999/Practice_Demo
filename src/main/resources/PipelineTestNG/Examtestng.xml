@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="WELL-Exam-Module">
+
+<parameter name="moduleName" value="Common"/>
+ <test name="WELL-AP" >
+<parameter name="SheetName" value="Exam"/>
+<parameter name="rowNum" value="2"/>
+<classes>
+<class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteInitialTest"></class> 
+<class name="com.Well.testcases.login.TC_01_LoginTest"></class>
+<class name="com.Well.testcases.Exam.Exam_TC_02_RegisterExamTest"></class>
+<class name="com.Well.testcases.Exam.Exam_TC_03_EnrollExamTest"></class>
+<class name="com.Well.testcases.Exam.Exam_TC_04_BillingTest"></class>
+<class name="com.Well.testcases.Exam.Exam_TC_05_StoreExamIdTest"></class> 
+<class name="com.Well.testcases.Exam.Exam_TC_06_CancelExamByIdTest"></class>
+<class name="com.Well.testcases.Faculty.Faculty_TC_05_BulkDeleteTest"></class>  
+<class name="com.Well.testcases.Exam.Exam_TC_07_ValidateSadaLearnPracticeExamBundleTest"></class>
+<class name="com.Well.testcases.Exam.Exam_TC_08_FieldNegativeAssertTest"></class> 
+<class name="com.Well.testcases.Exam.Exam_TC_09_ErrorNegativeAssertTest"></class>
+</classes>
+</test>
+
+</suite>  
