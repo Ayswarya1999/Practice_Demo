@@ -8,17 +8,11 @@ import com.HireProUs.Engine.BaseClass;
 import com.HireProUs.Engine.CommonMethod;
 
 public class ReusableMethodsLogin extends BaseClass {
-	
+
 	public void Login() throws IOException, InterruptedException {
 		testlog.info("Given User navigate to HireProUs Dashboard page");
-		String Username=null;
-		String Password=null;
-				if(RoleName.contains("RecruitmentManager")){
-				Username = data.getCellData("Login", "UserName", 2); 
-				Password = data.getCellData("Login", "Password", 2);
-				}
-				
-				
+		String Username = data.getCellData("Login", "UserName", 2);
+		String Password = data.getCellData("Login", "Password", 2);
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("Username", 0);
 		CommonMethod.scrolldowntoElement("Username");
 		CommonMethod.sendKeys("Username", Username);
@@ -29,15 +23,17 @@ public class ReusableMethodsLogin extends BaseClass {
 		testlog.info("Sending Password: " + Password);
 		Thread.sleep(1000);
 		CommonMethod.scrolldowntoElement("LoginButton");
-		CommonMethod.RobustclickElementVisible("LoginButton","SuccessfulLogin");
+		CommonMethod.RobustclickElementVisible("LoginButton", "HumanResourceTab");
 		testlog.info("And User clicks on Sign IN button");
-		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("SuccessfulLogin", 0);
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("HumanResourceTab", 0);
 		testlog.info("Then User will be redirected to Dashboard page");
-		testlog.pass("Verfies Login Successful");	
+		testlog.pass("Verfies Login Successful");
 	}
-	
-	public void CommonLogin(String Username, String Password) throws IOException, InterruptedException, ClientApiException {
+
+	public void CommonLogin() throws IOException, InterruptedException, ClientApiException {
 		
+		String Username = data.getCellData("Login", "UserName", 4);
+		String Password = data.getCellData("Login", "Password", 4);
 		testlog.info("Given User navigate to HireProUs Dashboard page");
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("Username", 0);
 		CommonMethod.scrolldowntoElement("Username");
@@ -47,15 +43,12 @@ public class ReusableMethodsLogin extends BaseClass {
 		testlog.info("Sending Username " + Username);
 		testlog.info("Sending Password " + Password);
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("LoginButton", 0);
-		CommonMethod.RobustclickElementVisible("LoginButton","HumanResourceTab");
+		CommonMethod.RobustclickElementVisible("LoginButton", "HumanResourceTab");
 		testlog.info("And User clicks on Sign IN button");
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("HumanResourceTab", 0);
 		testlog.info("Then User will be redirected to Dashboard page");
 		testlog.pass("Verfies Login Successful");
-		
-	}
-	
-	
+
 	}
 
-
+}

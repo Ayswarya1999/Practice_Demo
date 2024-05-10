@@ -12,9 +12,14 @@
 <parameter name="ErrorMessage" value="False"/>
 <classes>
 
-<class name="com.HireProUs.testcases.login.TC_01_LoginTest"></class>
+<!--<class name="com.HireProUs.testcases.login.TC_01_LoginTest"></class>
 <class name="com.HireProUs.testcases.Process.TC_02_JobRequestTest"></class>
-<class name="com.HireProUs.testcases.Process.TC_03_AddCandidateTest"></class>
+<class name="com.HireProUs.testcases.Process.TC_03_AddCandidateTest"></class>-->
+
+<!--<class name="com.HireProUs.testcases.Process.TC_05_ScheduleInterviewTest"></class> -->
+
+<class name="com.HireProUs.testcases.Process.TC_06_InterviewProcessR1Test"></class> 
+
 <!-- <class name="com.HireProUs.testcases.Process.TC_10_NegativeFieldSoftAssertTest"></class>
 <class name="com.HireProUs.testcases.Process.TC_11_NegativeErrorMessageSoftAssertTest"></class> -->
 </classes>

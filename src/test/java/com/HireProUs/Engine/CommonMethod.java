@@ -2650,8 +2650,8 @@ public class CommonMethod extends BaseClass {
 
 	public static String getCurrentDate() {
 		Calendar currentDate = Calendar.getInstance();
-		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd, yyyy");
-		return formatter.format(currentDate.getTime());
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		return formatter.format(currentDate.getTime());     
 	}
 
 	public static WebElement SelectRandomfromList(String objectLocator, int Startindex, int Endindex)

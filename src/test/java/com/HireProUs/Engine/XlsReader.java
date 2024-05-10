@@ -234,7 +234,6 @@ public class XlsReader {
 				return "";
 
 			int index = workbook.getSheetIndex(sheetName);
-			System.out.println("@@@@@@@@@"+index);
 			int col_Num = -1;
 			if (index == -1)
 				return "";

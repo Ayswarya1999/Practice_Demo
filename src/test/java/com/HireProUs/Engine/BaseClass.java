@@ -171,7 +171,7 @@ public class BaseClass {
 			SecurityAssesment = "false";
 			ChromeOptions options = new ChromeOptions();
 			if (OS.contains("Window")) {
-				WebDriverManager.chromedriver().driverVersion("123.0.6312.59").setup();
+				WebDriverManager.chromedriver().driverVersion("124").setup();
 				
 				
 			} else {

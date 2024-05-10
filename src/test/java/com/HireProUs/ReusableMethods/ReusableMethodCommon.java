@@ -1,8 +1,7 @@
 package com.HireProUs.ReusableMethods;
 
-import java.awt.AWTException;  
-import java.awt.Robot;
-import java.awt.event.InputEvent;
+import java.awt.AWTException;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -17,7 +16,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import org.apache.commons.io.FileUtils;
-import org.bouncycastle.pqc.jcajce.provider.lms.LMSSignatureSpi.generic;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -33,6 +31,7 @@ import com.HireProUs.testcases.login.TC_01_LoginTest;
 
 public class ReusableMethodCommon extends BaseClass {
 	public static ReusableMethodCommon rc = new ReusableMethodCommon();
+
 	public void SignOut() throws InterruptedException, IOException, ClientApiException {
 		testlog.info("Given User logout from the HireProUs Application");
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ProfileTab", 0);
@@ -74,6 +73,8 @@ public class ReusableMethodCommon extends BaseClass {
 		}
 		return sb.toString();
 	}
+	
+	///////////////////////////////////// Job Request Creation//////////////////////
 
 	public void CreateJobRequest(String SheetName, int rowNum, String ErrorMessage)
 			throws InterruptedException, IOException, ClientApiException, AWTException {
@@ -123,7 +124,7 @@ public class ReusableMethodCommon extends BaseClass {
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("CurrencyType", 0);
 		CommonMethod.selectdropdownVisibletext("CurrencyType", data.getCellData(SheetName, "CurrencyType", rowNum));
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ProjectStartDate", 0);
-		CommonMethod.clearAndSendKey("ProjectStartDate","23-02-2024");
+		CommonMethod.clearAndSendKey("ProjectStartDate", "23-02-2024");
 		System.out.println(CommonMethod.setDateFormat("23-02-2024"));
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("PlacementFor", 0);
 		CommonMethod.selectdropdownVisibletext("PlacementFor", data.getCellData(SheetName, "PlacementFor", rowNum));
@@ -149,17 +150,21 @@ public class ReusableMethodCommon extends BaseClass {
 
 	public void JobRequestSearchFilter(String SheetName, int rowNum)
 			throws InterruptedException, IOException, ClientApiException {
+		testlog.info("Given User Filter the JobRequests for the specified ID");
 		String JrId = data.getCellData(SheetName, "JrId", rowNum);
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestSearch", 0);
 		CommonMethod.sendKeys("JobRequestSearch", data.getCellData(SheetName, "JrId", rowNum));
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestSearchBtn", 0);
 		CommonMethod.RobustclickElementVisible("JobRequestSearchBtn", "JobRequestList");
 		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestList", 0);
-		testlog.info("Fetching Data from Upload Table");
-		CommonMethod.negativesoftassertFieldValid(CommonMethod.getattributeValueByTextContent("JobRequestList"), JrId,
-				"Job Request Success Message Mismatch");
-		testlog.pass("Verfies Added Job Request in search filter Successful");
+		testlog.info("When User Fetching the Data from Upload Table");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestListTable", 0);
+		List<String> val = CommonMethod.fetchTableData("JobRequestListTable");
+		CommonMethod.negativesoftassertFieldValid(val.get(1), JrId, "Job Request Id doesn't match");
+		testlog.pass("Then User Verfies Added Job Request in search filter Successfully");
 	}
+
+	////////////////////////////////// Adding Candidate Details////////////////////////////
 
 	public void AddCandidateTest(String sheetName, int rowNum)
 			throws InterruptedException, IOException, ClientApiException {
@@ -237,14 +242,136 @@ public class ReusableMethodCommon extends BaseClass {
 		System.out.println("Alert message: " + alertText);
 		alert.dismiss();
 		CommonMethod.refreshBrowser();
-		
+
 		rc.SignOut();
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("LoginButton", 0);
 
 	}
-	public void ResumeShortlist(String sheetName, int rowNum)
+////////////////////////////////////////Resume Shortlist///////////////////////////
+
+	public void ResumeShortlist(String SheetName, int rowNum)
 			throws InterruptedException, IOException, ClientApiException {
 		testlog.info("Interviewer shorlist the Resume");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("HumanResourceTab", 0);
+		CommonMethod.RobustclickElementVisible("HumanResourceTab", "RecruitmentTab");
+		testlog.info("When User clicks on RecruitmentTab");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("RecruitmentTab", 0);
+		CommonMethod.RobustclickElementVisible("RecruitmentTab", "ResumeShortlistBtn");
+		testlog.info("And User clicks on ResumeShortlistBtn ");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistBtn", 0);
+		CommonMethod.RobustclickElementVisible("ResumeShortlistBtn", "ResumeShortlistTable");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistTable", 0);
+		String JrId = data.getCellData(SheetName, "JrId", rowNum);
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistSearch", 0);
+		CommonMethod.sendKeys("ResumeShortlistSearch", data.getCellData(SheetName, "JrId", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistSearchBtn", 0);
+		CommonMethod.RobustclickElementVisible("ResumeShortlistSearchBtn", "JobRequestList");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestList", 0);
+		testlog.info("Fetching Data from Upload Table");
+		CommonMethod.negativesoftassertFieldValid(CommonMethod.getattributeValueByTextContent("JobRequestList"), JrId,
+				"Job Request Success Message Mismatch");
+		testlog.pass("Verfies Added Job Request in search filter Successful");
+		testlog.info("And Interviewer Shortlist / Hold / Reject the candidate");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistSelectBtn", 0);
+		CommonMethod.RobustclickElementVisible("ResumeShortlistSelectBtn", "ReasonForShortlist");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ReasonForShortlist", 0);
+		CommonMethod.sendKeys("ReasonForShortlist", data.getCellData(SheetName, "Reason For Shortlist", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistButton", 0);
+		CommonMethod.RobustclickElementVisible("ResumeShortlistButton", "ResumeShortlistedSuccessMessage");
+		testlog.info("Candidate Resume Shortlisted Successfully");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ResumeShortlistedSuccessMessage", 0);
+		rc.SignOut();
+	}
 
+	/////////////// Schedule Interview Process/////////////////////////////
+
+	public void ScheduleInterview(String SheetName, int rowNum)
+			throws InterruptedException, IOException, ClientApiException {
+
+		testlog.info("Recruitment Team Schedule's Round 1 interview for the candiadte");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("HumanResourceTab", 0);
+		CommonMethod.RobustclickElementVisible("HumanResourceTab", "RecruitmentTab");
+		testlog.info("When User clicks on RecruitmentTab");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("RecruitmentTab", 0);
+		CommonMethod.RobustclickElementVisible("RecruitmentTab", "ScheduleInterviewBtn");
+		testlog.info("And User clicks on ScheduleInterviewBtn");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ScheduleInterviewBtn", 0);
+		CommonMethod.RobustclickElementVisible("ScheduleInterviewBtn", "JobRequestSearch");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestSearch", 0);
+		String JrId = data.getCellData(SheetName, "JrId", rowNum);
+		CommonMethod.sendKeys("JobRequestSearch", data.getCellData(SheetName, "JrId", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("JobRequestSearchBtn", 0);
+		CommonMethod.negativesoftassertFieldValid(CommonMethod.getattributeValueByTextContent("JobRequestList"), JrId,
+				"Job Request Success Message Mismatch");
+		CommonMethod.RobustclickElementVisible("JobRequestSearchBtn", "ScheduleInterviewActionBtn");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ScheduleInterviewActionBtn", 0);
+		testlog.info("And User Clicks on Action button for scheduling interview for the candidate");
+		CommonMethod.RobustclickElementVisible("ScheduleInterviewActionBtn", "SelectInterviewer");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("SelectInterviewer", 0);
+		testlog.info("And User enters the mandatory details for scheduling the interview");
+		CommonMethod.sendKeys("SelectInterviewer", data.getCellData(SheetName, "InterviewerName", rowNum));
+		Thread.sleep(3000);
+		CommonMethod.Robustclick("SelectInterviewerClickBtn");
+		CommonMethod.WaitUntilNumberOfElementToBePresentLessThan("SelectInterviewerClickBtn", 1);
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ModeOfInterview", 0);
+		CommonMethod.selectdropdownVisibletext("ModeOfInterview",
+				data.getCellData(SheetName, "Mode Of Interview", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ScheduleDate", 0);
+		CommonMethod.clearAndSendKey("ScheduleDate", CommonMethod.getCurrentDate());
+		Thread.sleep(3000);
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewStartsFrom", 0);
+		CommonMethod.sendKeys("InterviewStartsFrom", data.getCellData(SheetName, "InterviewStartsFrom", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewDuration", 0);
+		CommonMethod.selectdropdownVisibletext("InterviewDuration",
+				data.getCellData(SheetName, "InterviewDuration", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("TimeZone", 0);
+		CommonMethod.sendKeys("TimeZone", data.getCellData(SheetName, "TimeZone", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("SelectTimeZone", 0);
+		CommonMethod.Robustclick("SelectTimeZone");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewVenue", 0);
+		CommonMethod.sendKeys("InterviewVenue", data.getCellData(SheetName, "InterviewVenue", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewRemarks", 0);
+		CommonMethod.sendKeys("InterviewRemarks", data.getCellData(SheetName, "InterviewRemarks", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("ScheduleInterviewSaveBtn", 0);
+		CommonMethod.RobustclickElementVisible("ScheduleInterviewSaveBtn", "ResumeShortlistedSuccessMessage");
+		testlog.info("Interview Schedule Added Successfully!");
+	}
+
+	///////////////////////////////////// Interview Process Round 1////////////////////////////////
+
+	public void InterviewProcess(String SheetName, int rowNum)
+			throws InterruptedException, IOException, ClientApiException {
+		testlog.info("Given Interviewer Select / Hold or Reject the candidate ");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("HumanResourceTab", 0);
+		CommonMethod.RobustclickElementVisible("HumanResourceTab", "RecruitmentTab");
+		testlog.info("When User clicks on RecruitmentTab");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("RecruitmentTab", 0);
+		CommonMethod.RobustclickElementVisible("RecruitmentTab", "InterviewProcessBtn");
+		testlog.info("And User clicks on InterviewProcessBtn ");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewProcessBtn", 0);
+		CommonMethod.RobustclickElementVisible("InterviewProcessBtn", "InterviewProcessTableList");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewProcessTableList", 0);
+		String JrId = data.getCellData(SheetName, "JrId", rowNum);
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewProcessSearchForJR", 0);
+		CommonMethod.sendKeys("InterviewProcessSearchForJR", data.getCellData(SheetName, "JrId", rowNum));
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewProcessSearchForJRBtn", 0);
+		CommonMethod.RobustclickElementVisible("InterviewProcessSearchForJRBtn", "InterviewProcessTableList");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewProcessTableList", 0);
+		testlog.info("Fetching Data from Upload Table");
+		CommonMethod.negativesoftassertFieldValid(
+				CommonMethod.getattributeValueByTextContent("InterviewProcessTableList"), JrId,
+				"Job Request Success Message Mismatch");
+		testlog.pass("Verfies Added Job Request in search filter Successfully");
+		CommonMethod.WaitUntilNumberOfElementToBePresentMoreThan("InterviewProcessResultBtn", 0);
+		CommonMethod.RobustclickElementVisible("InterviewProcessResultBtn", "InterviewProcessSelectStatus");
+		CommonMethod.selectdropdownVisibletext("InterviewProcessSelectStatus",
+				data.getCellData(SheetName, "InterviewResultStatus", rowNum));
+		CommonMethod.RobustclickElementVisible("InterviewProcessRemarks", "InterviewProcessSaveBtn");
+		CommonMethod.sendKeys("InterviewProcessRemarks",data.getCellData(SheetName, "InterviewProcessRemarks", rowNum));
+		CommonMethod.Robustclick("InterviewProcessSaveBtn");
+		//		CommonMethod.RobustclickElementVisible("InterviewProcessSaveBtn", "ResumeShortlistedSuccessMessage");
+		testlog.info("Interview Schedule Added Successfully!");
 
 	}
+
 }
